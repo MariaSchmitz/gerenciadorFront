@@ -8,16 +8,15 @@ import { UserService } from './services/user.service';
   styleUrls: []
 })
 export class AppComponent implements OnInit{
+
   users: User[] = [];
 
   constructor(private service: UserService){}
 
   ngOnInit(): void {
-    this.service.list().subscribe((users) => {
-      this.users = users;
-      for(let teste of users){
-        console.log(teste);
-      }
-    });
+     this.service.list().subscribe(users => {
+         this.users = users;
+     });
   }
+  
 }
