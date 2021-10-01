@@ -4,58 +4,6 @@
       </button>
     <span>Gerenciador de Projetos</span>
 </mat-toolbar>
-<div style="text-align: center;">
-    <mat-card>
-        <mat-card style="text-align: center; margin-top: 20px;">
-            <p>CADASTRO DE PROJETO</p>
-            <mat-form-field class="example-full-width mgInput" appearance="fill">
-                <mat-label>Favorite food</mat-label>
-                <input matInput>
-            </mat-form-field>
-            <mat-form-field class="example-full-width mgInput" appearance="fill">
-                <mat-label>Favorite food</mat-label>
-                <input matInput>
-            </mat-form-field>
-            <mat-form-field class="example-full-width mgInput" appearance="fill">
-                <mat-label>Favorite food</mat-label>
-                <input matInput>
-            </mat-form-field>
-            <mat-form-field class="example-full-width mgInput" appearance="fill">
-                <mat-label>Favorite food</mat-label>
-                <input matInput>
-            </mat-form-field>
-            <mat-form-field class="example-full-width mgInput" appearance="fill">
-                <mat-label>Favorite food</mat-label>
-                <input matInput>
-            </mat-form-field>
-            <div>
-                <button mat-raised-button color="primary">Cadastrar</button>
-            </div>
-        </mat-card>
-    </mat-card>
-</div>
-<div style="text-align: center;">
-    <mat-card>
-        <mat-card style="text-align: center; margin-top: 20px;">
-            LISTA DE USUÁRIOS
-        </mat-card>
-        <mat-card>
-            <table id="customers">
-                <TR>
-                    <TH>ID</TH>
-                    <TH>Nome</TH>
-                    <TH>Trabalho</TH>
-                    <TH>Empresa</TH>
-                    <TH>Data de Cadastro</TH>
-                </TR>
-                <TR *ngFor="let user of users">
-                    <TD>{{ user.id }}</TD>
-                    <TD>{{ user.name }}</TD>
-                    <TD>{{ user.office }}</TD>
-                    <TD>{{ user.company }}</TD>
-                    <TD>{{ user.created }}</TD>
-                </TR>
-            </table>
-        </mat-card>
-    </mat-card>
-</div>
+
+<router-outlet></router-outlet>
+
