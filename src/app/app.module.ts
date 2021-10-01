@@ -17,9 +17,11 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { CadastrarProjetosComponent } from './components/views/projeto/cadastrar-projetos/cadastrar-projetos.component';
 import { ListarUsuariosComponent } from './components/views/usuarios/listar-usuarios/listar-usuarios.component';
 import { HomeComponent } from './components/views/home/home/home.component';
+import { TaskComponentComponent } from './components/views/task/task-component/task-component.component';
+import { ListarProjetosComponent } from './components/views/projeto/listar-projetos/listar-projetos.component';
 
 @NgModule({
-  declarations: [AppComponent, CadastrarProjetosComponent, ListarUsuariosComponent, HomeComponent],
+  declarations: [AppComponent, CadastrarProjetosComponent, ListarUsuariosComponent, HomeComponent, TaskComponentComponent, ListarProjetosComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule, BrowserAnimationsModule, MatToolbarModule, MatIconModule, MatButtonModule, MatCardModule, MatInputModule, MatAutocompleteModule, MatFormFieldModule],
   providers: [],
   bootstrap: [AppComponent],

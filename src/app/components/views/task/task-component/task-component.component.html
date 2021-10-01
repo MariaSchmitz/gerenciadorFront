@@ -1,7 +1,13 @@
 <div style="text-align: center;">
     <mat-card>
         <mat-card style="text-align: center; margin-top: 20px;">
-            <p>CADASTRO DE PROJETO</p>
+            <p>CADASTRO DE ATIVIDADES</p>
+            <mat-form-field class="example-full-width mgInput" appearance="fill">
+                <mat-label for="name">Nome</mat-label>
+                <select *ngFor="let project of projects">
+                    <mat-option value="{{project.id}}" [(ngModel)]="projectId">{{project.name}}</mat-option>
+                </select>
+            </mat-form-field><br>
             <mat-form-field class="example-full-width mgInput" appearance="fill">
                 <mat-label for="name">Nome</mat-label>
                 <input matInput name="name" [(ngModel)]="name">
@@ -20,4 +26,4 @@
             </div>
         </mat-card>
     </mat-card>
-</div>
+</div><p>task-component works!</p>
