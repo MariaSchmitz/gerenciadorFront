@@ -35,21 +35,21 @@ export class TaskComponentComponent implements OnInit {
   });
   }
 
-  cadastrar(): void{
+  // cadastrar(): void{
     
-   let task: Task = {
-    name: this.name,
-    user: "adasdasd",
-    projectId: this.projectId,
-    company: "asdasdas",
-    startDate: this.startDate,
-    endDate: this.endDate
-   }
+  //   let task: Task = {
+  //     name: this.name,
+  //     user: "adasdasd",
+  //     projectId: this.projectId,
+  //     company: "asdasdas",
+  //     startDate: this.startDate,
+  //     endDate: this.endDate
+  //   }
 
-   this.service.create(task).subscribe((task) => {
-    console.log(task);
-  }, (error) => {
+  //   this.service.create(task).subscribe((task) => {
+  //     console.log(task);
+  //   }, (error) => {
 
-  })
-  }
+  //   })
+  //   }
 }

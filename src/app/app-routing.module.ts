@@ -6,6 +6,10 @@ import { ListarUsuariosComponent } from './components/views/usuarios/listar-usua
 
 const routes: Routes = [
   {
+    path: "",
+    component: CadastrarProjetosComponent
+  },
+  {
     path: "project-create",
     component: CadastrarProjetosComponent
   },

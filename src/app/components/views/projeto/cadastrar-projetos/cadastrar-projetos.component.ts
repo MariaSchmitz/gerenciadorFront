@@ -35,6 +35,7 @@ export class CadastrarProjetosComponent implements OnInit {
 
     this.service.create(projeto).subscribe((project) => {
       console.log(projeto);
+      this.router.navigate(["produto/listar"]);
     }, (error) => {
 
     })
