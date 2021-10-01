@@ -1,8 +1,8 @@
 export interface User {
-    id: number;
+    id?: number;
     name: string;
     office: string;
     company: string;
-    created: Date;
+    created?: Date;
 
 }
