@@ -4,27 +4,4 @@
       </button>
     <span>Gerenciador de Projetos</span>
 </mat-toolbar>
-<div style="text-align: center;">
-  <mat-card>
-      <mat-card style="text-align: center; margin-top: 20px;">
-          <p>CADASTRO DE USUÁRIO</p>
-          <mat-form-field class="example-full-width mgInput" appearance="fill">
-              <mat-label>Nome</mat-label>
-              <input matInput name="name" [(ngModel)]="name">
-          </mat-form-field>
-          <mat-form-field class="example-full-width mgInput" appearance="fill">
-              <mat-label>Trabalho</mat-label>
-              <input matInput name="office" [(ngModel)]="office">
-          </mat-form-field>
-          <mat-form-field class="example-full-width mgInput" appearance="fill">
-              <mat-label>Empresa</mat-label>
-              <input matInput name="company" [(ngModel)]="company">
-          </mat-form-field>
-          <div>
-              <button mat-raised-button color="primary" (click)="cadastrar()" >Cadastrar</button>
-          </div>
-      </mat-card>
-  </mat-card>
-</div>
 <router-outlet></router-outlet>
-
