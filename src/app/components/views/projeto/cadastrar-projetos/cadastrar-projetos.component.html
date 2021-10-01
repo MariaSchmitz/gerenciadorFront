@@ -1,0 +1,23 @@
+<div style="text-align: center;">
+    <mat-card>
+        <mat-card style="text-align: center; margin-top: 20px;">
+            <p>CADASTRO DE PROJETO</p>
+            <mat-form-field class="example-full-width mgInput" appearance="fill">
+                <mat-label for="name">Nome</mat-label>
+                <input matInput name="name" [(ngModel)]="name">
+            </mat-form-field><br>
+            <mat-form-field class="example-full-width mgInput" appearance="fill">
+                <mat-label for="startDate">Data de inicio</mat-label>
+                <input type="date" matInput name="startDate" [(ngModel)]="startDate">
+            </mat-form-field><br>
+            <mat-form-field class="example-full-width mgInput" appearance="fill">
+                <mat-label   mat-label for="endDate">Data de Fim</mat-label>
+                <input type="date" matInput name="endDate" [(ngModel)]="endDate">
+            </mat-form-field>
+           
+            <div>
+                <button (click)="cadastrar()" mat-raised-button color="primary">Cadastrar</button>
+            </div>
+        </mat-card>
+    </mat-card>
+</div>
