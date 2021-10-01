@@ -13,9 +13,12 @@ import {MatCardModule} from '@angular/material/card';
 import {MatInputModule} from '@angular/material/input';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatFormFieldModule} from '@angular/material/form-field';
+// componentes da aplicação
+import { CadastrarProjetosComponent } from './components/views/projeto/cadastrar-projetos/cadastrar-projetos.component';
+import { ListarUsuariosComponent } from './components/views/usuarios/listar-usuarios/listar-usuarios.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, CadastrarProjetosComponent, ListarUsuariosComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule, BrowserAnimationsModule, MatToolbarModule, MatIconModule, MatButtonModule, MatCardModule, MatInputModule, MatAutocompleteModule, MatFormFieldModule],
   providers: [],
   bootstrap: [AppComponent],
