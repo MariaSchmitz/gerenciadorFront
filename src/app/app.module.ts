@@ -19,9 +19,10 @@ import { ListarUsuariosComponent } from './components/views/usuarios/listar-usua
 import { HomeComponent } from './components/views/home/home/home.component';
 import { TaskComponentComponent } from './components/views/task/task-component/task-component.component';
 import { ListarProjetosComponent } from './components/views/projeto/listar-projetos/listar-projetos.component';
+import { CriarUsuarioComponent } from './components/views/usuarios/criar-usuario/criar-usuario.component';
 
 @NgModule({
-  declarations: [AppComponent, CadastrarProjetosComponent, ListarUsuariosComponent, HomeComponent, TaskComponentComponent, ListarProjetosComponent],
+  declarations: [AppComponent, CadastrarProjetosComponent, ListarUsuariosComponent, HomeComponent, TaskComponentComponent, ListarProjetosComponent, CriarUsuarioComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule, BrowserAnimationsModule, MatToolbarModule, MatIconModule, MatButtonModule, MatCardModule, MatInputModule, MatAutocompleteModule, MatFormFieldModule],
   providers: [],
   bootstrap: [AppComponent],
