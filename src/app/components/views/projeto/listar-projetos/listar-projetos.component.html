@@ -1,1 +1,25 @@
-<p>listar-projetos works!</p>
+<div style="text-align: center;">
+    <mat-card>
+        <mat-card style="text-align: center; margin-top: 20px;">
+            LISTA DE PROJETOS
+        </mat-card>
+        <mat-card>
+            <table class="usersTable">
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Empresa</th>
+                    <th>Data de inicio</th>
+                    <th>Data de encerramento</th>
+                </tr>
+                <tr *ngFor="let project of projects">
+                    <td>{{ project.id }}</td>
+                    <td>{{ project.name }}</td>
+                    <td>{{ project.company }}</td>
+                    <td>{{ project.startDate }}</td>
+                    <td>{{ project.endDate }}</td>
+                </tr>
+            </table>
+        </mat-card>
+    </mat-card>
+</div>

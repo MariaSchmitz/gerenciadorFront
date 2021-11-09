@@ -9,13 +9,14 @@ import { ProjectService } from 'src/app/services/project.service';
 })
 export class ListarProjetosComponent implements OnInit {
 
-  produtos: Project[] = [];
+    projects: Project[] = [];
 
     constructor(private service: ProjectService) {}
 
     ngOnInit(): void {
+
         this.service.list().subscribe((projects) => {
-            projects = projects;
+            this.projects = projects;
             for (let project of projects) {
                 console.log(project);
             }
