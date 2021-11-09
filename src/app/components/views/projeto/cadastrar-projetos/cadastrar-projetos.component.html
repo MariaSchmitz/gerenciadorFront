@@ -6,6 +6,17 @@
                 <mat-label for="name">Nome</mat-label>
                 <input matInput name="name" [(ngModel)]="name">
             </mat-form-field><br>
+            <mat-form-field class="example-full-width mgInput" id="userForm">
+                <mat-label for="user">Usuario</mat-label>
+                <mat-select name="companny" [(ngModel)]="userId">
+                    <mat-option
+                        *ngFor="let user of users"
+                        value="{{ user.id }}"
+                    >
+                        {{ user.name }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field><br>
             <mat-form-field class="example-full-width mgInput" appearance="fill">
                 <mat-label for="startDate">Data de inicio</mat-label>
                 <input type="date" matInput name="startDate" [(ngModel)]="startDate">
