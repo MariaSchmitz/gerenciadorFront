@@ -1,16 +1,21 @@
 <div style="text-align: center;">
     <mat-card>
         <mat-card style="text-align: center; margin-top: 20px;">
-            <p>CADASTRO DE ATIVIDADES</p>
-            <mat-form-field class="example-full-width mgInput" appearance="fill">
-                <mat-label for="name">Nome</mat-label>
-                <select *ngFor="let project of projects">
-                    <mat-option value="{{project.id}}" [(ngModel)]="projectId">{{project.name}}</mat-option>
-                </select>
-            </mat-form-field><br>
+            <p>CADASTRO DE TAREFA</p>
             <mat-form-field class="example-full-width mgInput" appearance="fill">
                 <mat-label for="name">Nome</mat-label>
                 <input matInput name="name" [(ngModel)]="name">
+            </mat-form-field><br>
+            <mat-form-field class="example-full-width mgInput" id="userForm">
+                <mat-label for="project">Projeto</mat-label>
+                <mat-select name="project" [(ngModel)]="projectId">
+                    <mat-option
+                        *ngFor="let project of projects"
+                        value="{{ project.id }}"
+                    >
+                        {{ project.name }}
+                    </mat-option>
+                </mat-select>
             </mat-form-field><br>
             <mat-form-field class="example-full-width mgInput" appearance="fill">
                 <mat-label for="startDate">Data de inicio</mat-label>
@@ -22,8 +27,8 @@
             </mat-form-field>
            
             <div>
-                <!-- <button (click)="cadastrar()" mat-raised-button color="primary">Cadastrar</button> -->
+                <button (click)="cadastrarTask()" mat-raised-button color="primary">Cadastrar</button>
             </div>
         </mat-card>
     </mat-card>
-</div><p>task-component works!</p>
+</div>

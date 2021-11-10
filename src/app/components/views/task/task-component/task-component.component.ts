@@ -15,12 +15,10 @@ export class TaskComponentComponent implements OnInit {
   projects: Project[] = [];
 
   name!: string;
-  user!: "Maria";
-  company!: "Tenda";
-  created = new Date();
+  projectId!: number;
   startDate!: Date;
   endDate!: Date;
-  projectId!: number;
+  created = new Date();
 
   constructor(private router: Router,
     private service: TaskService,
@@ -29,27 +27,23 @@ export class TaskComponentComponent implements OnInit {
   ngOnInit(): void {
     this.serviceProject.list().subscribe((projects) => {
       this.projects = projects;
-      for (let project of projects) {
-          console.log(project);
-      }
-  });
+    });
   }
 
-  // cadastrar(): void{
-    
-  //   let task: Task = {
-  //     name: this.name,
-  //     user: "adasdasd",
-  //     projectId: this.projectId,
-  //     company: "asdasdas",
-  //     startDate: this.startDate,
-  //     endDate: this.endDate
-  //   }
+  cadastrarTask(): void {
+    let task: Task = {
+      name: this.name,
+      projectId: this.projectId,
+      endDate: this.endDate,
+      startDate: this.startDate,
+      created: this.created,
+    }
 
-  //   this.service.create(task).subscribe((task) => {
-  //     console.log(task);
-  //   }, (error) => {
-
-  //   })
-  //   }
+    this.service.createTask(task).subscribe((task) => {
+      console.log(task)
+      this.router.navigate(["task-list"]);
+    }, (error) => {
+      console.log(error)
+    })
+  }
 }

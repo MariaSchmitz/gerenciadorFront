@@ -45,8 +45,6 @@ export class CadastrarProjetosComponent implements OnInit {
         endDate: this.endDate
       }
 
-      console.log(projeto)
-
       this.service.create(projeto).subscribe((project) => {
         console.log(projeto);
         this.router.navigate(["project-list"]);
