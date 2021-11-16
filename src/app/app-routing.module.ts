@@ -5,11 +5,16 @@ import { ListarProjetosComponent } from './components/views/projeto/listar-proje
 import { ListarTasksComponent } from './components/views/task/listar-tasks/listar-tasks.component';
 import { TaskComponentComponent } from './components/views/task/task-component/task-component.component';
 import { CriarUsuarioComponent } from './components/views/usuarios/criar-usuario/criar-usuario.component';
+import { HomeComponent } from './components/views/home/home/home.component';
 import { ListarUsuariosComponent } from './components/views/usuarios/listar-usuarios/listar-usuarios.component';
 
 const routes: Routes = [
   {
     path: "",
+    component: HomeComponent
+  },
+  {
+    path: "user-create",
     component: CriarUsuarioComponent
   },
   {

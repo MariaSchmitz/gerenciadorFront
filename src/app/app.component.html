@@ -1,8 +1,53 @@
-<mat-toolbar color="primary">
-    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-        <mat-icon>menu</mat-icon>
-      </button>
-    <span>Gerenciador de Projetos</span>
-</mat-toolbar>
+<mat-sidenav-container fullscreen>
+    <mat-sidenav #sidenav>
+      <mat-nav-list (click)="sidenav.close()">
+        <a mat-list-item routerLink="/">
+          <mat-icon>home</mat-icon>
+          <span>Home</span>
+        </a>
+        <a mat-list-item routerLink="user-create">
+          <mat-icon>person_add</mat-icon>
+          <span>Criar usuários</span>
+        </a>
+        <a mat-list-item routerLink="task-create">
+          <mat-icon>add_task</mat-icon>
+          <span>Criar tarefa</span>
+        </a>
+        <a mat-list-item routerLink="project-create">
+          <mat-icon>note_add</mat-icon>
+          <span>Criar projeto</span>
+        </a>
+        <a mat-list-item routerLink="user-list">
+          <mat-icon>groups</mat-icon>
+          <span>Lista de usuário</span>
+        </a>
+        <a mat-list-item routerLink="task-list">
+          <mat-icon>task_alt</mat-icon>
+          <span>Lista de tarefas</span>
+        </a>
+        <a mat-list-item routerLink="project-list">
+          <mat-icon>description</mat-icon>
+          <span>Lista de projetos</span>
+        </a>
+      </mat-nav-list>
+    </mat-sidenav>
 
-<router-outlet></router-outlet>
+    <mat-toolbar color="primary">
+      <button mat-icon-button (click)="sidenav.open()" class="example-icon" aria-label="Example icon-button with menu icon">
+          <mat-icon>menu</mat-icon>
+        </button>
+      <span>Gerenciador de Projetos</span>
+  </mat-toolbar>
+  
+  <router-outlet></router-outlet>
+  
+    <div class="footer" #footer>© 2021 Copyright:
+      <a href="teste"> GerenciadorDeProjetos.com</a>
+    </div>
+</mat-sidenav-container>
+
+<footer layout="row" class="md-padding">
+  <div>
+    <p>I am Sticky!</p>
+  </div>
+</footer>
