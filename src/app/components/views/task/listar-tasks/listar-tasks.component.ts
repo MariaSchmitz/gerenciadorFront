@@ -10,7 +10,8 @@ import { TaskService } from 'src/app/services/task.service';
 export class ListarTasksComponent implements OnInit {
 
   tasks: Task[] = [];
-
+  isChecked = true;
+  
   constructor(private service: TaskService) { }
 
   ngOnInit(): void {

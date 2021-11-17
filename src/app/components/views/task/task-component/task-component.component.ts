@@ -4,6 +4,7 @@ import { Project } from 'src/app/models/projects';
 import { Task } from 'src/app/models/task';
 import { ProjectService } from 'src/app/services/project.service';
 import { TaskService } from 'src/app/services/task.service';
+import {MatDialog} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-task-component',
@@ -22,7 +23,8 @@ export class TaskComponentComponent implements OnInit {
 
   constructor(private router: Router,
     private service: TaskService,
-    private serviceProject: ProjectService) { }
+    private serviceProject: ProjectService,
+    public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.serviceProject.list().subscribe((projects) => {
@@ -30,7 +32,7 @@ export class TaskComponentComponent implements OnInit {
     });
   }
 
-  cadastrarTask(): void {
+  cadastrarTask() {
     let task: Task = {
       name: this.name,
       projectId: this.projectId,
@@ -38,12 +40,28 @@ export class TaskComponentComponent implements OnInit {
       startDate: this.startDate,
       created: this.created,
     }
-
+    
     this.service.createTask(task).subscribe((task) => {
       console.log(task)
+      this.dialog.open(TaskComponentComponentDialog)
       this.router.navigate(["task-list"]);
     }, (error) => {
+      this.dialog.open(TaskComponentComponentDialogError)
       console.log(error)
     })
   }
+}
+
+@Component({
+  selector: 'app-task-component-dialog',
+  templateUrl: './task-component.component-dialog.html'
+})
+export class TaskComponentComponentDialog {}
+
+@Component({
+  selector: 'app-task-component-dialog-error',
+  templateUrl: './task-component.component-dialog-error.html'
+})
+export class TaskComponentComponentDialogError {
+  
 }
