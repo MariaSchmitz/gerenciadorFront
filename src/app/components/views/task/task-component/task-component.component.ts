@@ -14,11 +14,13 @@ import {MatDialog} from '@angular/material/dialog';
 export class TaskComponentComponent implements OnInit {
   
   projects: Project[] = [];
+  
 
   name!: string;
   projectId!: number;
   startDate!: Date;
   endDate!: Date;
+  end!: boolean;
   created = new Date();
 
   constructor(private router: Router,
@@ -38,6 +40,7 @@ export class TaskComponentComponent implements OnInit {
       projectId: this.projectId,
       endDate: this.endDate,
       startDate: this.startDate,
+      end: this.end,
       created: this.created,
     }
     

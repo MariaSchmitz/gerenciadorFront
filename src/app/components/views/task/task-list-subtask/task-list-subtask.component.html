@@ -1,0 +1,21 @@
+<div style="text-align: center;">
+    <mat-card>
+        <mat-card style="text-align: center; margin-top: 20px;">
+            LISTA DE  SUBTAREFAS
+        </mat-card>
+        <mat-card>
+            <table class="usersTable">
+                <tr>
+                    <th>ID</th>
+                    <th>Description</th>
+                    <th>End</th>
+                </tr>
+                <tr *ngFor="let subtask of subtasks">
+                    <td>{{ subtask.id }}</td>
+                    <td>{{ subtask.description }}</td>
+                    <td> <mat-checkbox class="example-margin" [checked]=subtask.end>{{subtask.description}}</mat-checkbox></td>
+                </tr>
+            </table>
+        </mat-card>
+    </mat-card>
+</div>
