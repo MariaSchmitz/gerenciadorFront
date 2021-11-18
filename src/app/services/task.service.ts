@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable,EventEmitter } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Project } from '../models/projects';
 import { User } from '../models/user';
@@ -7,11 +7,17 @@ import { Task } from "../models/task";
 
 @Injectable({
   providedIn: 'root'
+  
 })
 export class TaskService {
+
+  taskSelecionada = new EventEmitter<number>();
+
   private baseUrl = "https://localhost:5001/api/task/"
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) { 
+    console.log('TaskService');
+  }
 
   list(): Observable<Task[]> {
     return this.http.get<Task[]>(`http://localhost:5000/api/task/list`);

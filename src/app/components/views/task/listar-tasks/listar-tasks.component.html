@@ -7,22 +7,13 @@
         <mat-grid-tile *ngFor="let task of tasks">
             <mat-card class="example-card">
                 
-                <mat-card-title>{{task.name}}</mat-card-title>
+                <mat-card-title >{{task.name}}</mat-card-title>
                 <mat-card-content>
                     <p>{{task.name}}</p>
                 </mat-card-content>
                 <mat-slide-toggle [checked]=task.end>Concluido </mat-slide-toggle>
-                <section class="example-section" *ngFor="let subtask of subtasks">
-                    <mat-checkbox class="example-margin" [checked]=subtask.end>{{subtask.description}} | {{taskId}}</mat-checkbox>
-                  </section>
-                  <section class="example-section" *ngFor="let subtask of subtasks">
-                    <mat-checkbox class="example-margin" [(ngModel)]="taskId">{{subtask.description}} {{taskId}}</mat-checkbox>
-                  </section>
-                <mat-progress-bar mode="determinate" value="40"></mat-progress-bar>
-                
                 <mat-card-actions>
-                    <button mat-button>LIKE</button>
-                    <button mat-button>SHARE</button>
+                    <a [routerLink]="['/task-list-subtask',task.id]">SubTasks</a>
                 </mat-card-actions>
                 
             </mat-card>

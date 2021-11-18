@@ -14,6 +14,7 @@ import {MatDialog} from '@angular/material/dialog';
 export class TaskComponentComponent implements OnInit {
   
   projects: Project[] = [];
+  
 
   name!: string;
   projectId!: number;

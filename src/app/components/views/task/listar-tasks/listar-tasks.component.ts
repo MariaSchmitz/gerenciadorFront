@@ -1,5 +1,6 @@
 import { Subtask } from './../../../../models/subtask';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Task } from 'src/app/models/task';
 import { TaskService } from 'src/app/services/task.service';
 import { SubtaskService } from 'src/app/services/subtask.service';
@@ -14,8 +15,11 @@ export class ListarTasksComponent implements OnInit {
   tasks: Task[] = [];
   subtasks: Subtask[] = [];
   taskId?: number;
+  id?: number;
+
   
-  constructor(private service: TaskService,private subtaskService: SubtaskService) { 
+  
+  constructor(private router: Router,private service: TaskService,private subtaskService: SubtaskService) { 
     
   }
   
@@ -51,12 +55,8 @@ export class ListarTasksComponent implements OnInit {
     console.log("Entrei na Subtask Service");
     this.subtasks = subtasks;
     console.log(subtasks.values);
-    for(let subtask of subtasks){
-      console.log("Entrei na Subtask");
-      console.log(subtask);
-    }
+    
   });
-
   }
 
 }

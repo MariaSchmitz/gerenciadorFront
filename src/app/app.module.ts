@@ -30,10 +30,11 @@ import { TaskComponentComponent,TaskComponentComponentDialog,TaskComponentCompon
 import { ListarProjetosComponent } from './components/views/projeto/listar-projetos/listar-projetos.component';
 import { CriarUsuarioComponent } from './components/views/usuarios/criar-usuario/criar-usuario.component';
 import { ListarTasksComponent } from './components/views/task/listar-tasks/listar-tasks.component';
+import { TaskListSubtaskComponent } from './components/views/task/task-list-subtask/task-list-subtask.component';
 
 
 @NgModule({
-  declarations: [AppComponent, CadastrarProjetosComponent, ListarUsuariosComponent, HomeComponent, TaskComponentComponent,TaskComponentComponentDialog,TaskComponentComponentDialogError, ListarProjetosComponent, CriarUsuarioComponent, ListarTasksComponent],
+  declarations: [AppComponent, CadastrarProjetosComponent, ListarUsuariosComponent, HomeComponent, TaskComponentComponent,TaskComponentComponentDialog,TaskComponentComponentDialogError, ListarProjetosComponent, CriarUsuarioComponent, ListarTasksComponent, TaskListSubtaskComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule, BrowserAnimationsModule, MatToolbarModule, MatIconModule, MatButtonModule, MatCardModule, MatInputModule, MatAutocompleteModule, MatFormFieldModule, MatSelectModule, MatGridListModule,MatSidenavModule,MatListModule,MatProgressBarModule,MatSlideToggleModule,MatDialogModule,MatCheckboxModule],
   providers: [],
   bootstrap: [AppComponent],
