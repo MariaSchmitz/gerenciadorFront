@@ -51,12 +51,7 @@ export class ListarTasksComponent implements OnInit {
       }
   });
 
-  this.subtaskService.listByTask(6).subscribe((subtasks) => {
-    console.log("Entrei na Subtask Service");
-    this.subtasks = subtasks;
-    console.log(subtasks.values);
-    
-  });
+  
   }
 
 }

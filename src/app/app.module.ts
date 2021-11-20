@@ -21,6 +21,7 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import { BsModalService } from 'ngx-bootstrap/modal';
 
 // componentes da aplicação
 import { CadastrarProjetosComponent } from './components/views/projeto/cadastrar-projetos/cadastrar-projetos.component';
@@ -36,7 +37,7 @@ import { TaskListSubtaskComponent } from './components/views/task/task-list-subt
 @NgModule({
   declarations: [AppComponent, CadastrarProjetosComponent, ListarUsuariosComponent, HomeComponent, TaskComponentComponent,TaskComponentComponentDialog,TaskComponentComponentDialogError, ListarProjetosComponent, CriarUsuarioComponent, ListarTasksComponent, TaskListSubtaskComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule, BrowserAnimationsModule, MatToolbarModule, MatIconModule, MatButtonModule, MatCardModule, MatInputModule, MatAutocompleteModule, MatFormFieldModule, MatSelectModule, MatGridListModule,MatSidenavModule,MatListModule,MatProgressBarModule,MatSlideToggleModule,MatDialogModule,MatCheckboxModule],
-  providers: [],
+  providers: [BsModalService],
   bootstrap: [AppComponent],
 })
 export class AppModule { }

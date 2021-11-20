@@ -25,4 +25,10 @@ export class SubtaskService {
   createTask(subtask: Subtask) : Observable<Subtask> {
     return this.http.post<Subtask>(`http://localhost:5000/api/subtask/create`, subtask);
   }
+  deleteSubtask(subtaskId?: number) : Observable<Subtask> {
+    return this.http.delete<Subtask>(`http://localhost:5000/api/subtask/delete/${subtaskId}`);
+  }
+  uptadeTask(subtask: Subtask) : Observable<Subtask> {
+    return this.http.put<Subtask>(`http://localhost:5000/api/subtask/uptade`, subtask);
+  }
 }
