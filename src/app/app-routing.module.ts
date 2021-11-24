@@ -8,6 +8,7 @@ import { CriarUsuarioComponent } from './components/views/usuarios/criar-usuario
 import { HomeComponent } from './components/views/home/home/home.component';
 import { ListarUsuariosComponent } from './components/views/usuarios/listar-usuarios/listar-usuarios.component';
 import { TaskListSubtaskComponent } from './components/views/task/task-list-subtask/task-list-subtask.component';
+import { EditSubtaskComponent } from './components/views/task/edit-subtask/edit-subtask.component';
 
 const routes: Routes = [
   {
@@ -41,6 +42,10 @@ const routes: Routes = [
   {
     path: "task-list-subtask/:id",
     component: TaskListSubtaskComponent
+  },
+  {
+    path: "edit-subtask/:id",
+    component: EditSubtaskComponent
   }
 ];
 

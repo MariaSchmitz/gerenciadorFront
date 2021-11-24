@@ -21,7 +21,9 @@ export class SubtaskService {
   listByTask(taskId?: number): Observable<Subtask[]> {
     return this.http.get<Subtask[]>(`http://localhost:5000/api/subtask/listbytaskid/${taskId}`);
   }
-
+  listBySubtask(subtaskId?: number): Observable<Subtask[]> {
+    return this.http.get<Subtask[]>(`https://localhost:5001/api/subtask/getbyid/${subtaskId}`);
+  }
   createTask(subtask: Subtask) : Observable<Subtask> {
     return this.http.post<Subtask>(`http://localhost:5000/api/subtask/create`, subtask);
   }
@@ -29,6 +31,6 @@ export class SubtaskService {
     return this.http.delete<Subtask>(`http://localhost:5000/api/subtask/delete/${subtaskId}`);
   }
   uptadeTask(subtask: Subtask) : Observable<Subtask> {
-    return this.http.put<Subtask>(`http://localhost:5000/api/subtask/uptade`, subtask);
+    return this.http.put<Subtask>(`http://localhost:5000/api/subtask/update`, subtask);
   }
 }

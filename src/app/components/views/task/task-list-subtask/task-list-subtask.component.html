@@ -11,15 +11,13 @@
                     <th>Description</th>
                     <th>End</th>
                     <th>Ações</th>
-                    <th>Editar</th>
                 </tr>
                 <tr *ngFor="let subtask of subtasks">
                     <td>{{subtask.id}}</td>
-                    <td><input [disabled]="disabled" name="someId" ng-model='somethingN' [value]=subtask.description /></td>
-                    <td><mat-slide-toggle [checked]=subtask.end [disabled]="disabled"></mat-slide-toggle></td>
-                    <td> <button mat-button [disabled]="disabled" (click)="deleteSubtask(subtask)">Excluir</button>
-                        <button mat-button [disabled]="disabled" (click)="updateSubtask(subtask)">Salvar</button></td>
-                    <td> <mat-checkbox class="example-margin" [(ngModel)]="disabled"></mat-checkbox></td>
+                    <td><input #myDescription [value]=subtask.description /></td>
+                    <td><mat-slide-toggle #myEnd [checked]=subtask.end ></mat-slide-toggle></td>
+                    <td> <button mat-button  (click)="deleteSubtask(subtask)">Excluir</button>
+                        <button mat-button  (click)="updateSubtask(subtask)">Salvar</button></td>
                 </tr>
             </table>
             <ng-template #template>
@@ -50,9 +48,12 @@
     </div>
   </ng-template>
   <ng-template #updateModal>
-    <div class="modal-body text-center">
+    <div class="modal-body text-center" *ngFor="let subtaskUpdate of subtasksUpdate">
       <p>Tem certeza que deseja atualizar?</p>
-      <button type="button" class="btn btn-default" (click)="onConfirmUpdate()">Sim</button>
-      <button type="button" class="btn btn-primary" (click)="onDeclineUpdate()">Não</button>
+      <input [value]=subtaskUpdate.description/>
+      <mat-slide-toggle [checked]=subtaskUpdate.end></mat-slide-toggle>
+      <p></p>
+      <button type="button" class="btn btn-primary" (click)="onConfirmUpdate(subtaskUpdate)">Sim</button>
+      <button type="button" class="btn btn-danger" (click)="onDeclineUpdate()">Não</button>
     </div>
   </ng-template>
