@@ -9,6 +9,7 @@ import { HomeComponent } from './components/views/home/home/home.component';
 import { ListarUsuariosComponent } from './components/views/usuarios/listar-usuarios/listar-usuarios.component';
 import { TaskListSubtaskComponent } from './components/views/task/task-list-subtask/task-list-subtask.component';
 import { EditSubtaskComponent } from './components/views/task/edit-subtask/edit-subtask.component';
+import { VerProjetoComponent } from './components/views/projeto/ver-projeto/ver-projeto.component';
 
 const routes: Routes = [
   {
@@ -38,6 +39,10 @@ const routes: Routes = [
   {
     path: "project-list",
     component: ListarProjetosComponent
+  },
+  {
+    path: "project/:id",
+    component: VerProjetoComponent
   },
   {
     path: "task-list-subtask/:id",

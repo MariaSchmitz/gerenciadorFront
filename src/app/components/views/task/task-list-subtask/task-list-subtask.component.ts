@@ -113,6 +113,7 @@ export class TaskListSubtaskComponent implements OnInit {
     });
   }
 
+
   onConfirmUpdate(subtaskUpdate: Subtask): void {
     console.log("Essa foi a subtask DIALOG");
     //const firstChild = parentElement.children[0];

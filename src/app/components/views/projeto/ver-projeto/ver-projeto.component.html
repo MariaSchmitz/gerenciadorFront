@@ -1,8 +1,13 @@
-<div>
-    <mat-card style="text-align: center; margin-top: 20px;">
-        LISTA DE TAREFAS
+<div class="main">
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+        <h1 class="title">{{projects.name}}</h1>
+        <a mat-button [routerLink]="['/task-create']">Criar tarefa</a>
+    </div>
+    <mat-card>
+        <h3><b>Empresa do projeto:</b> {{projects.company}}</h3>
+        <h3><b>Criado em:</b> {{projects.created}}</h3>
     </mat-card>
-    <mat-grid-list cols="4" rowHeight="1:1">
+    <mat-grid-list cols="4" rowHeight="1:1" >
         <mat-grid-tile *ngFor="let task of tasks">
             <mat-card class="example-card">
                 <mat-card-title >{{task.name}}</mat-card-title>
@@ -11,12 +16,9 @@
                 </mat-card-content>
                 <mat-slide-toggle [checked]=task.end>Concluido </mat-slide-toggle>
                 <mat-card-actions>
-
-                    <a [routerLink]="['/task-list-subtask',task.id]" style="text-decoration:none">SubTasks</a>
-
+                    <a mat-button [routerLink]="['/task-list-subtask',task.id]">SubTasks</a>
                 </mat-card-actions>
             </mat-card>
         </mat-grid-tile>
-        
     </mat-grid-list>
 </div>

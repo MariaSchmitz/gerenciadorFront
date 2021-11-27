@@ -20,14 +20,14 @@ export class TaskService {
   }
 
   list(): Observable<Task[]> {
-    return this.http.get<Task[]>(`http://localhost:5000/api/task/list`);
+    return this.http.get<Task[]>(`http://localhost:5001/api/task/list`);
   }
 
   listByProject(projectId: number): Observable<Task[]> {
-    return this.http.get<Task[]>(`http://localhost:5000/api/task/listbyproductid/${projectId}`);
+    return this.http.get<Task[]>(`http://localhost:5001/api/task/listbyprojectid/${projectId}`);
   }
 
   createTask(task: Task) : Observable<Task> {
-    return this.http.post<Task>(`http://localhost:5000/api/task/create`, task);
+    return this.http.post<Task>(`http://localhost:5001/api/task/create`, task);
   }
 }

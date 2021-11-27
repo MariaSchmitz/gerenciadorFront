@@ -38,6 +38,20 @@
                   </div>
               </section>
         </mat-card>
+
+        <mat-grid-list cols="4" rowHeight="1:1" >
+            <mat-grid-tile *ngFor="let subtask of subtasks">
+                <mat-card class="example-card">
+                    <mat-card-title >{{subtask}}</mat-card-title>
+                    <mat-card-content>
+                        <p>{{subtask}}</p>
+                    </mat-card-content>
+                    <mat-card-actions class="card-footer">
+                        <mat-checkbox class="example-margin" [checked]=subtask.end>{{subtask.description}}</mat-checkbox>
+                    </mat-card-actions>
+                </mat-card>
+            </mat-grid-tile>
+        </mat-grid-list>
     </mat-card>
 </div>
 <ng-template #deleteModal>

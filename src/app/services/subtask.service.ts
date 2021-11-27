@@ -15,17 +15,17 @@ export class SubtaskService {
   constructor(private http: HttpClient) { }
 
   list(): Observable<Subtask[]> {
-    return this.http.get<Subtask[]>(`http://localhost:5000/api/subtask/list`);
+    return this.http.get<Subtask[]>(`http://localhost:5001/api/subtask/list`);
   }
 
   listByTask(taskId?: number): Observable<Subtask[]> {
-    return this.http.get<Subtask[]>(`http://localhost:5000/api/subtask/listbytaskid/${taskId}`);
+    return this.http.get<Subtask[]>(`http://localhost:5001/api/subtask/listbytaskid/${taskId}`);
   }
   listBySubtask(subtaskId?: number): Observable<Subtask[]> {
     return this.http.get<Subtask[]>(`https://localhost:5001/api/subtask/getbyid/${subtaskId}`);
   }
   createTask(subtask: Subtask) : Observable<Subtask> {
-    return this.http.post<Subtask>(`http://localhost:5000/api/subtask/create`, subtask);
+    return this.http.post<Subtask>(`http://localhost:5001/api/subtask/create`, subtask);
   }
   deleteSubtask(subtaskId?: number) : Observable<Subtask> {
     return this.http.delete<Subtask>(`http://localhost:5000/api/subtask/delete/${subtaskId}`);
