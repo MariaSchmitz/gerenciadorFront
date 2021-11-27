@@ -8,12 +8,11 @@
         <mat-grid-list cols="4" rowHeight="1:1" >
             <mat-grid-tile *ngFor="let subtask of subtasks">
                 <mat-card class="example-card">
-                    <mat-card-title >{{subtask}}</mat-card-title>
                     <mat-card-content>
-                        <p>{{subtask}}</p>
+                        <p>{{subtask.description}}</p>
                     </mat-card-content>
                     <mat-card-actions class="card-footer">
-                        <mat-checkbox class="example-margin" [checked]=subtask.end>{{subtask.description}}</mat-checkbox>
+                        <mat-checkbox class="example-margin" [checked]=subtask.end (click)="updateSubtask(subtask)">Concluído</mat-checkbox>
                     </mat-card-actions>
                 </mat-card>
             </mat-grid-tile>
@@ -30,13 +29,13 @@
     </div>
   </ng-template>
 
-  <ng-template #updateModal>
-    <div class="modal-body text-center" *ngFor="let subtaskUpdate of subtasksUpdate">
-      <p>Tem certeza que deseja atualizar?</p>
-      <input [value]=subtaskUpdate.description/>
-      <mat-slide-toggle [checked]=subtaskUpdate.end></mat-slide-toggle>
-      <p></p>
-      <button type="button" class="btn btn-primary" (click)="onConfirmUpdate(subtaskUpdate)">Sim</button>
-      <button type="button" class="btn btn-danger" (click)="onDeclineUpdate()">Não</button>
-    </div>
-  </ng-template>
+<ng-template #updateModal>
+<div class="modal-body text-center" *ngFor="let subtaskUpdate of subtasksUpdate">
+    <p>Tem certeza que deseja atualizar?</p>
+    <input [value]=subtaskUpdate.description/>
+    <mat-slide-toggle [checked]=subtaskUpdate.end></mat-slide-toggle>
+    <p></p>
+    <button type="button" class="btn btn-primary" (click)="onConfirmUpdate(subtaskUpdate)">Sim</button>
+    <button type="button" class="btn btn-danger" (click)="onDeclineUpdate()">Não</button>
+</div>
+</ng-template>

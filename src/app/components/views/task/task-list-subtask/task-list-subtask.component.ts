@@ -42,7 +42,7 @@ export class TaskListSubtaskComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private service: TaskService,
+    private serviceTask: TaskService,
     private subtaskService: SubtaskService,
     public dialog: MatDialog,
     private modalService: BsModalService
@@ -89,29 +89,20 @@ export class TaskListSubtaskComponent implements OnInit {
   updateSubtask(subtask: Subtask): void {
     console.log("Essa foi a subtask");
     console.log(subtask);
+    console.log(this.myEnd);
     
-    //console.log(this.myDescription.nativeElement.value);
-    subtask.description = this.myDescription.nativeElement.value;
-    subtask.end = this.myEnd.checked;
 
     let subtaskUpdate: Subtask = {
       id: subtask.id,
       description: subtask.description,
-      //description: this.myDescription.nativeElement.value,
       taskId: subtask.taskId,
-      end: this.myEnd.checked,
+      end: !subtask.end,
     };
     
-    this.subtasksUpdate[this.subtasksUpdate.length] = subtask;
-
-    this.subtaskSelecionada = subtaskUpdate;
-    console.log("Essa foi a subtask MMODIFICADA");
-    //console.log(this.myDescription.nativeElement.value);
-    //console.log(this.myEnd.checked);
-    console.log(this.subtaskSelecionada);
-    this.deleteModalRef = this.modalService.show(this.updateModal, {
-      class: "modal-sm",
-    });
+    this.subtaskService.uptadeSubTask(subtaskUpdate).subscribe((subtask) => {
+      console.log(subtask)
+      console.log("atualizou")
+    })
   }
 
 
