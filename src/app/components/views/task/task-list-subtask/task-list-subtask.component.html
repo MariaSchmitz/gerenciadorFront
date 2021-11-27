@@ -1,8 +1,44 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We">
 <div style="text-align: center;">
     <mat-card>
         <mat-card style="text-align: center; margin-top: 20px;">
             LISTA DE  SUBTAREFAS
         </mat-card>
+        <mat-card>
+            <table class="usersTable">
+                <tr>
+                    <th>ID</th>
+                    <th>Description</th>
+                    <th>End</th>
+                    <th>Ações</th>
+                </tr>
+                <tr *ngFor="let subtask of subtasks">
+                    <td>{{subtask.id}}</td>
+                    <td><input #myDescription [value]=subtask.description /></td>
+                    <td><mat-slide-toggle #myEnd [checked]=subtask.end ></mat-slide-toggle></td>
+                    <td> <button mat-button  (click)="deleteSubtask(subtask)">Excluir</button>
+                        <button mat-button  (click)="updateSubtask(subtask)">Salvar</button></td>
+                </tr>
+            </table>
+            <ng-template #template>
+                <div class="modal-body text-center">
+                    <p>teste</p>
+                    <button mat-button>Adicionar</button>
+                  <button mat-button disabled>Disabled</button>
+                </div>
+            </ng-template>
+            <section>
+                <div class="example-button-row">
+                  <button mat-button >Adicionar</button>
+                  <button mat-button disabled>Disabled</button>
+                </div>
+                <div class="example-button-row">
+                    <button mat-button>Salvar</button>
+                    <button mat-button disabled>Disabled</button>
+                  </div>
+              </section>
+        </mat-card>
+
         <mat-grid-list cols="4" rowHeight="1:1" >
             <mat-grid-tile *ngFor="let subtask of subtasks">
                 <mat-card class="example-card">
@@ -18,3 +54,20 @@
         </mat-grid-list>
     </mat-card>
 </div>
+<ng-template #deleteModal>
+    <div class="modal-body text-center">
+      <p>Tem certeza que deseja excluir?</p>
+      <button type="button" class="btn btn-default" (click)="onConfirmDelete()">Sim</button>
+      <button type="button" class="btn btn-primary" (click)="onDeclineDelete()">Não</button>
+    </div>
+  </ng-template>
+  <ng-template #updateModal>
+    <div class="modal-body text-center" *ngFor="let subtaskUpdate of subtasksUpdate">
+      <p>Tem certeza que deseja atualizar?</p>
+      <input [value]=subtaskUpdate.description/>
+      <mat-slide-toggle [checked]=subtaskUpdate.end></mat-slide-toggle>
+      <p></p>
+      <button type="button" class="btn btn-primary" (click)="onConfirmUpdate(subtaskUpdate)">Sim</button>
+      <button type="button" class="btn btn-danger" (click)="onDeclineUpdate()">Não</button>
+    </div>
+  </ng-template>

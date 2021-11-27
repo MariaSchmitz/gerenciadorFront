@@ -1,0 +1,18 @@
+<div style="text-align: center;">
+    <mat-card>
+        <mat-card style="text-align: center; margin-top: 20px;" *ngFor="let subtask of subtasks">
+            <p>EDITAR SUBTAREFA</p>
+            <mat-form-field class="example-full-width mgInput" appearance="fill">
+                <mat-label for="description">Descrição</mat-label>
+                <input matInput name="description" [(ngModel)]="description">
+            </mat-form-field><br>
+            <mat-form-field class="example-full-width mgInput" appearance="fill">
+                <mat-label for="end">Data de inicio</mat-label>
+                <mat-slide-toggle  name="end" [checked]=subtask.end ></mat-slide-toggle>
+            </mat-form-field><br>
+            <div>
+                <button (click)="salvar()" mat-raised-button color="primary">Salvar</button>
+            </div>
+        </mat-card>
+    </mat-card>
+</div>

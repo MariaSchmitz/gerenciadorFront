@@ -28,7 +28,7 @@ export class CriarUsuarioComponent implements OnInit {
       office: this.office,
       company: this.company
     }
-
+    console.log(user);
     this.service.createUser(user).subscribe((project) => {
       console.log(user);
       this.router.navigate(["user-list"]);
