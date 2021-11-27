@@ -30,4 +30,8 @@ export class TaskService {
   createTask(task: Task) : Observable<Task> {
     return this.http.post<Task>(`http://localhost:5001/api/task/create`, task);
   }
+
+  getById(taskId: number) : Observable<Task> {
+    return this.http.get<Task>(`http://localhost:5001/api/task/getbyid/${taskId}`);
+  }
 }

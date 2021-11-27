@@ -10,7 +10,7 @@ import { Subtask } from "../models/subtask";
   providedIn: 'root'
 })
 export class SubtaskService {
-  private baseUrl = "https://localhost:5001/api/subtask/"
+  private baseUrl = "http://localhost:5001/api/subtask/"
 
   constructor(private http: HttpClient) { }
 
@@ -24,7 +24,7 @@ export class SubtaskService {
   listBySubtask(subtaskId?: number): Observable<Subtask[]> {
     return this.http.get<Subtask[]>(`https://localhost:5001/api/subtask/getbyid/${subtaskId}`);
   }
-  createTask(subtask: Subtask) : Observable<Subtask> {
+  createSubTask(subtask: Subtask) : Observable<Subtask> {
     return this.http.post<Subtask>(`http://localhost:5001/api/subtask/create`, subtask);
   }
   deleteSubtask(subtaskId?: number) : Observable<Subtask> {

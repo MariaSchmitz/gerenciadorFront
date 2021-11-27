@@ -34,10 +34,11 @@ import { ListarTasksComponent } from './components/views/task/listar-tasks/lista
 import { TaskListSubtaskComponent } from './components/views/task/task-list-subtask/task-list-subtask.component';
 import { EditSubtaskComponent } from './components/views/task/edit-subtask/edit-subtask.component';
 import { VerProjetoComponent } from './components/views/projeto/ver-projeto/ver-projeto.component';
+import { CreateSubtaskComponent } from './components/views/task/create-subtask/create-subtask.component';
 
 
 @NgModule({
-  declarations: [AppComponent, CadastrarProjetosComponent, ListarUsuariosComponent, HomeComponent, TaskComponentComponent,TaskComponentComponentDialog,TaskComponentComponentDialogError, ListarProjetosComponent, CriarUsuarioComponent, ListarTasksComponent, TaskListSubtaskComponent, EditSubtaskComponent,VerProjetoComponent],
+  declarations: [AppComponent, CadastrarProjetosComponent, ListarUsuariosComponent, HomeComponent, TaskComponentComponent,TaskComponentComponentDialog,TaskComponentComponentDialogError, ListarProjetosComponent, CriarUsuarioComponent, ListarTasksComponent, TaskListSubtaskComponent, EditSubtaskComponent,VerProjetoComponent, CreateSubtaskComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule, BrowserAnimationsModule, MatToolbarModule, MatIconModule, MatButtonModule, MatCardModule, MatInputModule, MatAutocompleteModule, MatFormFieldModule, MatSelectModule, MatGridListModule,MatSidenavModule,MatListModule,MatProgressBarModule,MatSlideToggleModule,MatDialogModule,MatCheckboxModule],
   providers: [BsModalService],
   bootstrap: [AppComponent],

@@ -10,6 +10,7 @@ import { ListarUsuariosComponent } from './components/views/usuarios/listar-usua
 import { TaskListSubtaskComponent } from './components/views/task/task-list-subtask/task-list-subtask.component';
 import { EditSubtaskComponent } from './components/views/task/edit-subtask/edit-subtask.component';
 import { VerProjetoComponent } from './components/views/projeto/ver-projeto/ver-projeto.component';
+import { CreateSubtaskComponent } from './components/views/task/create-subtask/create-subtask.component';
 
 const routes: Routes = [
   {
@@ -43,6 +44,10 @@ const routes: Routes = [
   {
     path: "project/:id",
     component: VerProjetoComponent
+  },
+  {
+    path: "create-subtask/:id",
+    component: CreateSubtaskComponent
   },
   {
     path: "task-list-subtask/:id",
