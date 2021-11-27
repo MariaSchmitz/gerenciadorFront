@@ -5,7 +5,13 @@
 
 .card-footer{
     border-top: 1px solid #CCCC;
+    background-color: white;
     padding: 20px 0px 0px 0px;
     display: flex;
     justify-content: left;
+}
+
+.card-footer > a{
+    color: rgba(32, 32, 32, 0.8);
+    text-decoration: none;
 }
