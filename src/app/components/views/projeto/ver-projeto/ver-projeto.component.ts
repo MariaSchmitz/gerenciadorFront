@@ -17,7 +17,10 @@ export class VerProjetoComponent implements OnInit {
   projects!: Project;
   tasks: Task[] = [];
 
-  constructor(private serviceTask: TaskService, private serviceProject: ProjectService, private router: Router, private route: ActivatedRoute) {
+  constructor(private serviceTask: TaskService, 
+        private serviceProject: ProjectService, 
+        private router: Router, 
+        private route: ActivatedRoute) {
     this.route.params.subscribe(params => this.projectId = params['id']);
    }
 
@@ -39,6 +42,25 @@ export class VerProjetoComponent implements OnInit {
       }
     });
     
+  }
+
+  updateTask(task: Task): void {
+    
+    let taskUpdate: Task = {
+      id: task.id,
+      name: task.name,
+      projectId: task.projectId,
+      startDate: task.startDate,
+      endDate: task.endDate,
+      end: !task.end
+    }
+
+    this.serviceTask.uptadeTask(taskUpdate).subscribe(() => {
+      this.serviceProject.getPercentage(this.projectId).subscribe((percentage) => {
+        this.percentage = percentage;
+      })  
+    })
+
   }
 
 }

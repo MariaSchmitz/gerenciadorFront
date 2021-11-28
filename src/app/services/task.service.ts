@@ -32,4 +32,8 @@ export class TaskService {
   getById(taskId: number) : Observable<Task> {
     return this.http.get<Task>(`${this.baseUrl}/getbyid/${taskId}`);
   }
+
+  uptadeTask(task: Task) : Observable<Task> {
+    return this.http.put<Task>(`${this.baseUrl}/update`, task);
+  }
 }

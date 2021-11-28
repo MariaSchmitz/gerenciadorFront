@@ -16,7 +16,7 @@
                 <mat-card-content>
                     <p>{{task.name}}</p>
                 </mat-card-content>
-                <mat-slide-toggle [checked]=task.end>Concluido </mat-slide-toggle>
+                <mat-slide-toggle [checked]=task.end (click)="updateTask(task)" >Concluido </mat-slide-toggle>
                 <mat-card-actions>
                     <a mat-button [routerLink]="['/task-list-subtask',task.id]">SubTasks</a>
                 </mat-card-actions>
