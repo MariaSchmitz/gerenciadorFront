@@ -10,6 +10,7 @@ import { ProjectService } from 'src/app/services/project.service';
 export class ListarProjetosComponent implements OnInit {
 
     projects: Project[] = [];
+    percentages: number[]= [];
 
     constructor(private service: ProjectService) {}
 

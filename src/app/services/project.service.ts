@@ -18,6 +18,10 @@ export class ProjectService {
     return this.http.get<Project>(`http://localhost:5001/api/project/getbyid/${id}`);
   }
 
+  getPercentage(id: number): Observable<number> {
+    return this.http.get<number>(`http://localhost:5001/api/project/calc-percentage/${id}`);
+  }
+
   create(project: Project) : Observable<Project> {
     return this.http.post<Project>(`http://localhost:5001/api/project/create`, project);
   }

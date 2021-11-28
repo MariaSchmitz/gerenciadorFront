@@ -13,6 +13,7 @@ import { Project } from 'src/app/models/projects';
 export class VerProjetoComponent implements OnInit {
 
   projectId!: number;
+  percentage!: number;
   projects!: Project;
   tasks: Task[] = [];
 
@@ -27,6 +28,10 @@ export class VerProjetoComponent implements OnInit {
       console.log(this.projects)
     });
     
+    this.serviceProject.getPercentage(this.projectId).subscribe((percentage) => {
+      this.percentage = percentage;
+    })
+
     this.serviceTask.listByProject(this.projectId).subscribe((tasks) => {
       this.tasks = tasks;
       for (let task of tasks) {
