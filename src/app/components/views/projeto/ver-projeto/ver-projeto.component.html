@@ -8,6 +8,10 @@
         <h3><b>Porcentagem de conclusão:</b> {{percentage}}%</h3>
         <h3><b>Criado em:</b> {{projects.created |
                     date:'dd/MM/YYYY hh:mm:ss'}}</h3>
+        <h3 *ng-if="task">
+            <b>
+
+        </b></h3>
     </mat-card>
     <mat-grid-list cols="4" rowHeight="1:1" >
         <mat-grid-tile *ngFor="let task of tasks">

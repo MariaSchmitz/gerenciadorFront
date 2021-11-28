@@ -15,6 +15,8 @@ export class VerProjetoComponent implements OnInit {
   projectId!: number;
   percentage!: number;
   projects!: Project;
+  isntLate!: Task;
+  isLate!: Boolean;
   tasks: Task[] = [];
 
   constructor(private serviceTask: TaskService, 
@@ -33,6 +35,12 @@ export class VerProjetoComponent implements OnInit {
     
     this.serviceProject.getPercentage(this.projectId).subscribe((percentage) => {
       this.percentage = percentage;
+    })
+
+    this.serviceProject.getIsLate(this.projectId).subscribe((task) => {
+      if(task){
+        this.isLate;
+      }
     })
 
     this.serviceTask.listByProject(this.projectId).subscribe((tasks) => {
