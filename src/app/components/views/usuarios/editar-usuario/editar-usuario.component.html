@@ -1,0 +1,23 @@
+<div style="text-align: center;">
+    <mat-card>
+        <mat-card style="text-align: center; margin-top: 20px;">
+            <p>EDITAR USUÁRIO</p>
+            <mat-form-field class="example-full-width mgInput" appearance="fill">
+                <mat-label for="name">Nome</mat-label>
+                <input matInput name="name" [(ngModel)]="name">
+            </mat-form-field><br>
+            <mat-form-field class="example-full-width mgInput" appearance="fill">
+                <mat-label for="office">Cargo</mat-label>
+                <input matInput name="office" [(ngModel)]="office">
+            </mat-form-field><br>
+            <mat-form-field class="example-full-width mgInput" appearance="fill">
+                <mat-label   mat-label for="company">Empresa</mat-label>
+                <input matInput name="company"[(ngModel)]="company">
+            </mat-form-field>
+           
+            <div>
+                <button (click)="editarUsuario()" mat-raised-button color="primary">Editar</button>
+            </div>
+        </mat-card>
+    </mat-card>
+</div>

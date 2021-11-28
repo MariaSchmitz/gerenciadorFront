@@ -1,3 +1,4 @@
+import { EditarUsuarioComponent } from './components/views/usuarios/editar-usuario/editar-usuario.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CadastrarProjetosComponent } from './components/views/projeto/cadastrar-projetos/cadastrar-projetos.component';
@@ -56,6 +57,10 @@ const routes: Routes = [
   {
     path: "edit-subtask/:id",
     component: EditSubtaskComponent
+  },
+  {
+    path: "editar-usuario/:id",
+    component: EditarUsuarioComponent
   }
 ];
 

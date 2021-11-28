@@ -22,6 +22,7 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { BsModalService } from 'ngx-bootstrap/modal';
+import { MatTableModule } from "@angular/material/table";
 
 // componentes da aplicação
 import { CadastrarProjetosComponent } from './components/views/projeto/cadastrar-projetos/cadastrar-projetos.component';
@@ -35,11 +36,12 @@ import { TaskListSubtaskComponent } from './components/views/task/task-list-subt
 import { EditSubtaskComponent } from './components/views/task/edit-subtask/edit-subtask.component';
 import { VerProjetoComponent } from './components/views/projeto/ver-projeto/ver-projeto.component';
 import { CreateSubtaskComponent } from './components/views/task/create-subtask/create-subtask.component';
+import { EditarUsuarioComponent } from "./components/views/usuarios/editar-usuario/editar-usuario.component";
 
 
 @NgModule({
-  declarations: [AppComponent, CadastrarProjetosComponent, ListarUsuariosComponent, HomeComponent, TaskComponentComponent,TaskComponentComponentDialog,TaskComponentComponentDialogError, ListarProjetosComponent, CriarUsuarioComponent, ListarTasksComponent, TaskListSubtaskComponent, EditSubtaskComponent,VerProjetoComponent, CreateSubtaskComponent],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule, BrowserAnimationsModule, MatToolbarModule, MatIconModule, MatButtonModule, MatCardModule, MatInputModule, MatAutocompleteModule, MatFormFieldModule, MatSelectModule, MatGridListModule,MatSidenavModule,MatListModule,MatProgressBarModule,MatSlideToggleModule,MatDialogModule,MatCheckboxModule],
+  declarations: [AppComponent, CadastrarProjetosComponent, ListarUsuariosComponent, HomeComponent, TaskComponentComponent,TaskComponentComponentDialog,TaskComponentComponentDialogError, ListarProjetosComponent, CriarUsuarioComponent, ListarTasksComponent, TaskListSubtaskComponent, EditSubtaskComponent,VerProjetoComponent, CreateSubtaskComponent, EditarUsuarioComponent],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule, BrowserAnimationsModule, MatToolbarModule, MatIconModule, MatButtonModule, MatCardModule, MatInputModule, MatAutocompleteModule, MatFormFieldModule, MatSelectModule, MatGridListModule,MatSidenavModule,MatListModule,MatProgressBarModule,MatSlideToggleModule,MatDialogModule,MatCheckboxModule,MatTableModule],
   providers: [BsModalService],
   bootstrap: [AppComponent],
 })

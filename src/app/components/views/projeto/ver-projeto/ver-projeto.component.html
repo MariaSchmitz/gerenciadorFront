@@ -5,7 +5,8 @@
     </div>
     <mat-card>
         <h3><b>Empresa do projeto:</b> {{projects.company}}</h3>
-        <h3><b>Criado em:</b> {{projects.created}}</h3>
+        <h3><b>Criado em:</b> {{projects.created |
+                    date:'dd/MM/YYYY hh:mm:ss'}}</h3>
     </mat-card>
     <mat-grid-list cols="4" rowHeight="1:1" >
         <mat-grid-tile *ngFor="let task of tasks">
