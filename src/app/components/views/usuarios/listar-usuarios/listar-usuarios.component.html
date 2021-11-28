@@ -1,25 +1,56 @@
 <div style="text-align: center;">
+    <mat-card style="text-align: center; margin-top: 20px;">
+        LISTA DE USUÁRIOS
+    </mat-card>
     <mat-card>
-        <mat-card style="text-align: center; margin-top: 20px;">
-            LISTA DE USUÁRIOS
-        </mat-card>
-        <mat-card>
-            <table class="usersTable">
-                <TR>
-                    <TH>ID</TH>
-                    <TH>Nome</TH>
-                    <TH>Trabalho</TH>
-                    <TH>Empresa</TH>
-                    <TH>Data de Cadastro</TH>
-                </TR>
-                <TR *ngFor="let user of users">
-                    <TD>{{ user.id }}</TD>
-                    <TD>{{ user.name }}</TD>
-                    <TD>{{ user.office }}</TD>
-                    <TD>{{ user.company }}</TD>
-                    <TD>{{ user.created }}</TD>
-                </TR>
-            </table>
-        </mat-card>
+        <table mat-table [dataSource]="users" class="table mat-elevation-z8">
+            <!-- Coluna do Id -->
+            <ng-container matColumnDef="id">
+                <th class="header" mat-header-cell *matHeaderCellDef>ID</th>
+                <td mat-cell *matCellDef="let item">
+                    {{ item.id }}
+                </td>
+            </ng-container>
+            <!-- Coluna do Nome -->
+            <ng-container matColumnDef="name">
+                <th class="header" mat-header-cell *matHeaderCellDef>Nome</th>
+                <td mat-cell *matCellDef="let item">
+                    {{ item.name }}
+                </td>
+            </ng-container>
+            <!-- Coluna do office -->
+            <ng-container matColumnDef="office">
+                <th class="header" mat-header-cell *matHeaderCellDef>
+                    Trabalho
+                </th>
+                <td mat-cell *matCellDef="let item">{{ item.office }}</td>
+            </ng-container>
+            <!-- Coluna do company -->
+            <ng-container matColumnDef="company">
+                <th class="header" mat-header-cell *matHeaderCellDef>
+                    Empresa
+                </th>
+                <td mat-cell *matCellDef="let item">{{ item.company }}</td>
+            </ng-container>
+            <!-- Coluna do created -->
+            <ng-container matColumnDef="created">
+                <th class="header" mat-header-cell *matHeaderCellDef>
+                    Data Criação
+                </th>
+                <td mat-cell *matCellDef="let item">{{ item.created |
+                    date:'dd/MM/YYYY hh:mm:ss'}}</td>
+            </ng-container>
+            <!-- Coluna do Editar -->
+            <ng-container matColumnDef="actions">
+                <th class="header" mat-header-cell *matHeaderCellDef>
+                    Editar
+                </th>
+                <td mat-cell *matCellDef="let row" (click)="editar(row.id)"><button
+                        mat-raised-button color="primary" >Editar</button></td>
+            </ng-container>
+            <tr mat-header-row *matHeaderRowDef="colunasExibidas"></tr>
+            <tr mat-row *matRowDef="let row; columns: colunasExibidas"></tr>
+        </table>
     </mat-card>
 </div>
+

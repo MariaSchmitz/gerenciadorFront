@@ -10,27 +10,27 @@ import { Subtask } from "../models/subtask";
   providedIn: 'root'
 })
 export class SubtaskService {
-  private baseUrl = "http://localhost:5001/api/subtask/"
+  private baseUrl = "http://localhost:5001/api/subtask"
 
   constructor(private http: HttpClient) { }
 
   list(): Observable<Subtask[]> {
-    return this.http.get<Subtask[]>(`http://localhost:5001/api/subtask/list`);
+    return this.http.get<Subtask[]>(`${this.baseUrl}/list`);
   }
 
   listByTask(taskId?: number): Observable<Subtask[]> {
-    return this.http.get<Subtask[]>(`http://localhost:5001/api/subtask/listbytaskid/${taskId}`);
+    return this.http.get<Subtask[]>(`${this.baseUrl}/listbytaskid/${taskId}`);
   }
   listBySubtask(subtaskId?: number): Observable<Subtask[]> {
-    return this.http.get<Subtask[]>(`https://localhost:5001/api/subtask/getbyid/${subtaskId}`);
+    return this.http.get<Subtask[]>(`${this.baseUrl}/getbyid/${subtaskId}`);
   }
   createSubTask(subtask: Subtask) : Observable<Subtask> {
-    return this.http.post<Subtask>(`http://localhost:5001/api/subtask/create`, subtask);
+    return this.http.post<Subtask>(`${this.baseUrl}/create`, subtask);
   }
   deleteSubtask(subtaskId?: number) : Observable<Subtask> {
-    return this.http.delete<Subtask>(`http://localhost:5001/api/subtask/delete/${subtaskId}`);
+    return this.http.delete<Subtask>(`${this.baseUrl}/delete/${subtaskId}`);
   }
   uptadeSubTask(subtask: Subtask) : Observable<Subtask> {
-    return this.http.put<Subtask>(`http://localhost:5001/api/subtask/update`, subtask);
+    return this.http.put<Subtask>(`${this.baseUrl}/update`, subtask);
   }
 }

@@ -8,14 +8,16 @@ import { Project } from '../models/projects';
 })
 export class ProjectService {
 
+  private baseUrl = "http://localhost:5001/api/project"
+
   constructor(private http: HttpClient) { }
 
   list(): Observable<Project[]> {
-    return this.http.get<Project[]>(`http://localhost:5001/api/project/list`);
+    return this.http.get<Project[]>(`${this.baseUrl}/list`);
   }
 
   getById(id: number): Observable<Project> {
-    return this.http.get<Project>(`http://localhost:5001/api/project/getbyid/${id}`);
+    return this.http.get<Project>(`${this.baseUrl}/getbyid/${id}`);
   }
 
   getPercentage(id: number): Observable<number> {
@@ -23,6 +25,6 @@ export class ProjectService {
   }
 
   create(project: Project) : Observable<Project> {
-    return this.http.post<Project>(`http://localhost:5001/api/project/create`, project);
+    return this.http.post<Project>(`${this.baseUrl}/create`, project);
   }
 }

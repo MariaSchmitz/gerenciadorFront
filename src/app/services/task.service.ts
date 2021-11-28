@@ -13,25 +13,23 @@ export class TaskService {
 
   taskSelecionada = new EventEmitter<number>();
 
-  private baseUrl = "https://localhost:5001/api/task/"
+  private baseUrl = "http://localhost:5001/api/task"
 
-  constructor(private http: HttpClient) { 
-    console.log('TaskService');
-  }
+  constructor(private http: HttpClient) {}
 
   list(): Observable<Task[]> {
-    return this.http.get<Task[]>(`http://localhost:5001/api/task/list`);
+    return this.http.get<Task[]>(`${this.baseUrl}/list`);
   }
 
   listByProject(projectId: number): Observable<Task[]> {
-    return this.http.get<Task[]>(`http://localhost:5001/api/task/listbyprojectid/${projectId}`);
+    return this.http.get<Task[]>(`${this.baseUrl}/listbyprojectid/${projectId}`);
   }
 
   createTask(task: Task) : Observable<Task> {
-    return this.http.post<Task>(`http://localhost:5001/api/task/create`, task);
+    return this.http.post<Task>(`${this.baseUrl}/create`, task);
   }
 
   getById(taskId: number) : Observable<Task> {
-    return this.http.get<Task>(`http://localhost:5001/api/task/getbyid/${taskId}`);
+    return this.http.get<Task>(`${this.baseUrl}/getbyid/${taskId}`);
   }
 }
