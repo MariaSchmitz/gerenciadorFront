@@ -13,6 +13,8 @@
                     </mat-card-content>
                     <mat-card-actions class="card-footer">
                         <mat-checkbox class="example-margin" [checked]=subtask.end (click)="updateSubtask(subtask)">Concluído</mat-checkbox>
+                        <p></p>
+                        <button mat-button  (click)="deleteSubtask(subtask)">Excluir</button>
                     </mat-card-actions>
                 </mat-card>
             </mat-grid-tile>
@@ -20,7 +22,6 @@
 
     </mat-card>
 </div>
-
 <ng-template #deleteModal>
     <div class="modal-body text-center">
       <p>Tem certeza que deseja excluir?</p>

@@ -12,6 +12,7 @@ import { TaskService } from 'src/app/services/task.service';
 })
 export class CreateSubtaskComponent implements OnInit {
 
+  
   description!: string;
   task!: Task;
   taskID!: number;
@@ -32,12 +33,13 @@ export class CreateSubtaskComponent implements OnInit {
   }
 
   cadastrar(): void {
+    console.log(this.description);
     let subtask: Subtask = {
       description: this.description,
       taskId: this.taskID,
       end: false
     }
-
+    console.log(subtask);
     this.subtaskService.createSubTask(subtask).subscribe((subtask) => {
       console.log(subtask)
       this.router.navigate([`task-list-subtask/${this.taskID}`]);

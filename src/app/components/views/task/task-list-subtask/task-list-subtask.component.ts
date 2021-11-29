@@ -58,7 +58,7 @@ export class TaskListSubtaskComponent implements OnInit {
     this.subtaskService.listByTask(this.id).subscribe((subtasks) => {
       this.subtasks = subtasks;
     });
-
+    console.log(this.subtasks);
   }
 
   deleteSubtask(subtask: Subtask) {
