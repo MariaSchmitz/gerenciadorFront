@@ -15,7 +15,6 @@ export class VerProjetoComponent implements OnInit {
   projectId!: number;
   percentage!: number;
   projects!: Project;
-  isntLate!: Task;
   isLate!: Boolean;
   tasks: Task[] = [];
 
@@ -27,6 +26,10 @@ export class VerProjetoComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    this.serviceProject.getIsLate(this.projectId).subscribe((isLate) => {
+      this.isLate = isLate;
+      console.log(this.isLate)
+    });
 
     this.serviceProject.getById(this.projectId).subscribe((projects) => {
       this.projects = projects
@@ -35,12 +38,6 @@ export class VerProjetoComponent implements OnInit {
     
     this.serviceProject.getPercentage(this.projectId).subscribe((percentage) => {
       this.percentage = percentage;
-    })
-
-    this.serviceProject.getIsLate(this.projectId).subscribe((task) => {
-      if(task){
-        this.isLate;
-      }
     })
 
     this.serviceTask.listByProject(this.projectId).subscribe((tasks) => {

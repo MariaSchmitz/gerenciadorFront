@@ -12,10 +12,14 @@
                         date:'dd/MM/YYYY hh:mm:ss'}}</h3>
         <h3><b>Data Fim:</b> {{projects.endDate |
                             date:'dd/MM/YYYY hh:mm:ss'}}</h3>
-        <h3 *ng-if="task">
-            <b>
-
-        </b></h3>
+        
+        <div class="container" *ngIf="isLate; else isntLate">
+            <h3 style="color: red;">O projeto está atrasado</h3>
+        </div>  
+        
+        <ng-template #isntLate>
+            <h3 style="color: green;">O não projeto está atrasado</h3>
+        </ng-template>
     </mat-card>
     <mat-grid-list cols="4" rowHeight="1:1" >
         <mat-grid-tile *ngFor="let task of tasks">

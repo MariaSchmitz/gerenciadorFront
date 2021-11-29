@@ -24,8 +24,8 @@ export class ProjectService {
     return this.http.get<number>(`http://localhost:5001/api/project/calc-percentage/${id}`);
   }
 
-  getIsLate(id: number): Observable<Task> {
-    return this.http.get<Task>(`http://localhost:5001/api/project/is-late/${id}`);
+  getIsLate(id: number): Observable<Boolean> {
+    return this.http.get<Boolean>(`http://localhost:5001/api/project/is-late/${id}`);
   }
 
   create(project: Project) : Observable<Project> {
