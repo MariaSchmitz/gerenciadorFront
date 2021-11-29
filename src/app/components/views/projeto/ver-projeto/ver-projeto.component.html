@@ -8,6 +8,10 @@
         <h3><b>Porcentagem de conclusão:</b> {{percentage}}%</h3>
         <h3><b>Criado em:</b> {{projects.created |
                     date:'dd/MM/YYYY hh:mm:ss'}}</h3>
+        <h3><b>Data Inicio:</b> {{projects.startDate |
+                        date:'dd/MM/YYYY hh:mm:ss'}}</h3>
+        <h3><b>Data Fim:</b> {{projects.endDate |
+                            date:'dd/MM/YYYY hh:mm:ss'}}</h3>
         <h3 *ng-if="task">
             <b>
 
